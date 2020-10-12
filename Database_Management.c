@@ -35,7 +35,7 @@ start:
     while (1)
     {
 
-        puts("1. Add Records");
+        puts("\n1. Add Records");
 
         puts("2. List Records");
 
@@ -79,6 +79,7 @@ start:
             another = 'Y';
             while (another == 'Y' || another == 'y')
             {
+
                 puts("\nEnter The Name To Modify: ");
                 gets(fname);
                 rewind(fp);
@@ -88,8 +89,11 @@ start:
                     {
                         puts("Enter Name: ");
                         gets(d.name);
+                        // fflush(stdin);
                         puts("Enter Age: ");
-                        scanf("%d", &d.age);
+                        // scanf("%d", &d.age);
+                        gets(d.age);
+                        // fflush(stdin);
                         puts("Enter City");
                         gets(d.city);
                         fseek(fp, -resize, SEEK_CUR);
@@ -97,7 +101,7 @@ start:
                         break;
                     }
                 }
-                puts("\nModify Another Record (Y/N)");
+                puts("\nModify Another Record (Y/N): ");
                 fflush(stdin);
                 another = getche();
             }
